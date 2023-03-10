@@ -1,0 +1,13 @@
+extraLarg = insert: 649.7ms, append: 2.5ms
+large = insert: 7.5ms, append: 493microsec
+medium = insert: 170.6microsec, append: 130.8microsec
+small = insert: 155.6microsec, append: 106.1microsec
+tiny = insert: 38.8microsec, append: 92.6microsec
+
+
+I see an interesting tren here as the array gets smaller the gap between processing speeds gets smaller until the medium and small array.
+a that point there really isnt that much of a diffrence between the performance of the medium and small. they both have a diffrence of about 40 microseconds.
+but then the tiny function, although takes significantly less time alltogether, has a higher gap between its insert and append functions.
+the pattern also switches with the tiny array showing that it takes more than double the time to use the append method than it did for the insert, a pettern that has the opposite effects through the rest of the arrays.
+
+the append typically takes less time because its time complexity is o(n) vs the insert which is o(n^2). append simply adds the amount of input numbers to the array, while the insert adds an extra level of complexity using the unshift which adds each new number to the front of the array, having to chage the index order of each number previously in the array. in this case the arrays are not the same. the insert array result with be the reverse order of the append array. 
